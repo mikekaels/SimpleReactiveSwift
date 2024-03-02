@@ -8,7 +8,10 @@
 import UIKit
 
 internal final class ProfileVC: UIViewController {
-	init() {
+	let viewModel: ProfileVM
+	
+	init(viewModel: ProfileVM = ProfileVM()) {
+		self.viewModel = viewModel
 		super.init(nibName: nil, bundle: nil)
 		view.backgroundColor = .red
 	}
