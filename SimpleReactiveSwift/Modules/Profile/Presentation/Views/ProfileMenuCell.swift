@@ -127,6 +127,12 @@ internal final class ProfileMenuCell: UITableViewCell {
 				make.width.equalTo(10)
 				make.height.equalTo(15)
 			}
+			
+			menuWrapperView.tapPublisher
+				.sink { [weak self] _ in
+					self?.menuDidTapPublisher.send(.default(menu))
+				}
+				.store(in: cancellables)
 		}
 		
 		if case .switchButton = menu.valueType, case let .darkMode(isOn) = menu {
@@ -162,19 +168,17 @@ internal final class ProfileMenuCell: UITableViewCell {
 			}
 		}
 		
-		contentStacView.addArrangedSubview(menuWrapperView)
-		menuWrapperView.snp.makeConstraints { make in
-			make.height.equalTo(30)
-		}
-		
-		switch menu.valueType {
-		case .chevronButton, .none:
+		if case .none = menu.valueType {
 			menuWrapperView.tapPublisher
 				.sink { [weak self] _ in
 					self?.menuDidTapPublisher.send(.default(menu))
 				}
 				.store(in: cancellables)
-		default: break
+		}
+		
+		contentStacView.addArrangedSubview(menuWrapperView)
+		menuWrapperView.snp.makeConstraints { make in
+			make.height.equalTo(30)
 		}
 	}
 }
