@@ -26,6 +26,19 @@
 		F28836762B92FBF700D0B9A6 /* Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836752B92FBF700D0B9A6 /* Payments.swift */; };
 		F288367A2B92FC0E00D0B9A6 /* PaymentsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836792B92FC0E00D0B9A6 /* PaymentsResponse.swift */; };
 		F288367C2B92FDD600D0B9A6 /* BannersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288367B2B92FDD600D0B9A6 /* BannersResponse.swift */; };
+		F28836812B93052C00D0B9A6 /* ProfileUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836802B93052C00D0B9A6 /* ProfileUserCell.swift */; };
+		F28836842B9305C100D0B9A6 /* NSObject+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836832B9305C100D0B9A6 /* NSObject+Identifier.swift */; };
+		F28836862B93064400D0B9A6 /* ProfileUserShimmerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836852B93064400D0B9A6 /* ProfileUserShimmerCell.swift */; };
+		F28836892B930C2000D0B9A6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F28836882B930C2000D0B9A6 /* SnapKit */; };
+		F288368B2B930C2000D0B9A6 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F288368A2B930C2000D0B9A6 /* SnapKit-Dynamic */; };
+		F288368D2B9313A400D0B9A6 /* ProfilePaymentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288368C2B9313A400D0B9A6 /* ProfilePaymentsCell.swift */; };
+		F28836902B931FA700D0B9A6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288368F2B931FA700D0B9A6 /* Constants.swift */; };
+		F28836922B9320EA00D0B9A6 /* ProfileBannersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836912B9320EA00D0B9A6 /* ProfileBannersCell.swift */; };
+		F28836952B932FEB00D0B9A6 /* BannerCollectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836942B932FEB00D0B9A6 /* BannerCollectionFlowLayout.swift */; };
+		F28836972B93315F00D0B9A6 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836962B93315F00D0B9A6 /* UIColor+hex.swift */; };
+		F28836992B9338A700D0B9A6 /* ProfileMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836982B9338A700D0B9A6 /* ProfileMenuCell.swift */; };
+		F288369C2B93453E00D0B9A6 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = F288369B2B93453E00D0B9A6 /* CombineCocoa */; };
+		F288369E2B9345D700D0B9A6 /* UIView+TapPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288369D2B9345D700D0B9A6 /* UIView+TapPublisher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +63,16 @@
 		F28836752B92FBF700D0B9A6 /* Payments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payments.swift; sourceTree = "<group>"; };
 		F28836792B92FC0E00D0B9A6 /* PaymentsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsResponse.swift; sourceTree = "<group>"; };
 		F288367B2B92FDD600D0B9A6 /* BannersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannersResponse.swift; sourceTree = "<group>"; };
+		F28836802B93052C00D0B9A6 /* ProfileUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserCell.swift; sourceTree = "<group>"; };
+		F28836832B9305C100D0B9A6 /* NSObject+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Identifier.swift"; sourceTree = "<group>"; };
+		F28836852B93064400D0B9A6 /* ProfileUserShimmerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserShimmerCell.swift; sourceTree = "<group>"; };
+		F288368C2B9313A400D0B9A6 /* ProfilePaymentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePaymentsCell.swift; sourceTree = "<group>"; };
+		F288368F2B931FA700D0B9A6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F28836912B9320EA00D0B9A6 /* ProfileBannersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBannersCell.swift; sourceTree = "<group>"; };
+		F28836942B932FEB00D0B9A6 /* BannerCollectionFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionFlowLayout.swift; sourceTree = "<group>"; };
+		F28836962B93315F00D0B9A6 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		F28836982B9338A700D0B9A6 /* ProfileMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuCell.swift; sourceTree = "<group>"; };
+		F288369D2B9345D700D0B9A6 /* UIView+TapPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TapPublisher.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +80,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F28836892B930C2000D0B9A6 /* SnapKit in Frameworks */,
+				F288369C2B93453E00D0B9A6 /* CombineCocoa in Frameworks */,
+				F288368B2B930C2000D0B9A6 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +151,7 @@
 			children = (
 				F28836562B92ED1500D0B9A6 /* ProfileVC.swift */,
 				F28836512B92EC7E00D0B9A6 /* ProfileVM.swift */,
+				F288367F2B93051A00D0B9A6 /* Views */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -132,8 +159,11 @@
 		F28836532B92ECA400D0B9A6 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F288368E2B931F9C00D0B9A6 /* Constants */,
+				F28836822B9305B300D0B9A6 /* Extensions */,
 				F28836712B92F07900D0B9A6 /* Persistence */,
 				F28836542B92ECB200D0B9A6 /* Combine+Cancelbag.swift */,
+				F28836942B932FEB00D0B9A6 /* BannerCollectionFlowLayout.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -210,6 +240,44 @@
 			path = SupportedFiles;
 			sourceTree = "<group>";
 		};
+		F288367F2B93051A00D0B9A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F28836932B9320EF00D0B9A6 /* Shimmers */,
+				F28836802B93052C00D0B9A6 /* ProfileUserCell.swift */,
+				F288368C2B9313A400D0B9A6 /* ProfilePaymentsCell.swift */,
+				F28836982B9338A700D0B9A6 /* ProfileMenuCell.swift */,
+				F28836912B9320EA00D0B9A6 /* ProfileBannersCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F28836822B9305B300D0B9A6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F28836832B9305C100D0B9A6 /* NSObject+Identifier.swift */,
+				F28836962B93315F00D0B9A6 /* UIColor+hex.swift */,
+				F288369D2B9345D700D0B9A6 /* UIView+TapPublisher.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F288368E2B931F9C00D0B9A6 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				F288368F2B931FA700D0B9A6 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		F28836932B9320EF00D0B9A6 /* Shimmers */ = {
+			isa = PBXGroup;
+			children = (
+				F28836852B93064400D0B9A6 /* ProfileUserShimmerCell.swift */,
+			);
+			path = Shimmers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,6 +294,11 @@
 			dependencies = (
 			);
 			name = SimpleReactiveSwift;
+			packageProductDependencies = (
+				F28836882B930C2000D0B9A6 /* SnapKit */,
+				F288368A2B930C2000D0B9A6 /* SnapKit-Dynamic */,
+				F288369B2B93453E00D0B9A6 /* CombineCocoa */,
+			);
 			productName = SimpleReactiveSwift;
 			productReference = F28836342B92E9C500D0B9A6 /* SimpleReactiveSwift.app */;
 			productType = "com.apple.product-type.application";
@@ -254,6 +327,10 @@
 				Base,
 			);
 			mainGroup = F288362B2B92E9C500D0B9A6;
+			packageReferences = (
+				F28836872B930C2000D0B9A6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F288369A2B93453E00D0B9A6 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
+			);
 			productRefGroup = F28836352B92E9C500D0B9A6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -283,15 +360,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F288368D2B9313A400D0B9A6 /* ProfilePaymentsCell.swift in Sources */,
+				F28836902B931FA700D0B9A6 /* Constants.swift in Sources */,
 				F28836572B92ED1500D0B9A6 /* ProfileVC.swift in Sources */,
 				F288365C2B92EDBE00D0B9A6 /* ProfileUseCase.swift in Sources */,
+				F28836952B932FEB00D0B9A6 /* BannerCollectionFlowLayout.swift in Sources */,
 				F28836602B92EE3700D0B9A6 /* ProfileRepository.swift in Sources */,
 				F28836552B92ECB200D0B9A6 /* Combine+Cancelbag.swift in Sources */,
+				F28836972B93315F00D0B9A6 /* UIColor+hex.swift in Sources */,
 				F288366B2B92EF8000D0B9A6 /* User.swift in Sources */,
+				F28836862B93064400D0B9A6 /* ProfileUserShimmerCell.swift in Sources */,
 				F28836382B92E9C500D0B9A6 /* AppDelegate.swift in Sources */,
+				F288369E2B9345D700D0B9A6 /* UIView+TapPublisher.swift in Sources */,
 				F28836762B92FBF700D0B9A6 /* Payments.swift in Sources */,
+				F28836992B9338A700D0B9A6 /* ProfileMenuCell.swift in Sources */,
 				F28836522B92EC7E00D0B9A6 /* ProfileVM.swift in Sources */,
 				F288363A2B92E9C500D0B9A6 /* SceneDelegate.swift in Sources */,
+				F28836812B93052C00D0B9A6 /* ProfileUserCell.swift in Sources */,
+				F28836922B9320EA00D0B9A6 /* ProfileBannersCell.swift in Sources */,
+				F28836842B9305C100D0B9A6 /* NSObject+Identifier.swift in Sources */,
 				F288367A2B92FC0E00D0B9A6 /* PaymentsResponse.swift in Sources */,
 				F288367C2B92FDD600D0B9A6 /* BannersResponse.swift in Sources */,
 				F28836702B92F00800D0B9A6 /* PersistenceError.swift in Sources */,
@@ -509,6 +596,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F28836872B930C2000D0B9A6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		F288369A2B93453E00D0B9A6 /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F28836882B930C2000D0B9A6 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F28836872B930C2000D0B9A6 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		F288368A2B930C2000D0B9A6 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F28836872B930C2000D0B9A6 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+		F288369B2B93453E00D0B9A6 /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F288369A2B93453E00D0B9A6 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F288362C2B92E9C500D0B9A6 /* Project object */;
 }
