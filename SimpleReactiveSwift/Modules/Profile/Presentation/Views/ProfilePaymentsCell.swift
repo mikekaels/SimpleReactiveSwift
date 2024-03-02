@@ -84,11 +84,13 @@ internal final class ProfilePaymentCell: UITableViewCell {
 		stack.addArrangedSubview(chevronButton)
 		stack.spacing = Constants.contentSpacing
 		stack.axis = .horizontal
+		stack.alignment = .center
+		stack.distribution = .fill
 		stack.layer.borderWidth = 1
-		stack.layer.cornerRadius = Constants.padding
+		stack.layer.cornerRadius = Constants.cornerRadius
 		stack.layer.borderColor = UIColor.dynamicColor.cgColor
-		let padding = Constants.padding / 1.5
-		stack.directionalLayoutMargins = NSDirectionalEdgeInsets(top: padding, leading: padding, bottom: padding, trailing: padding)
+		let padding = Constants.padding / 2
+		stack.directionalLayoutMargins = NSDirectionalEdgeInsets(top: padding, leading: padding * 1.5, bottom: padding, trailing: padding * 1.5)
 		stack.isLayoutMarginsRelativeArrangement = true
 		return stack
 	}()
@@ -119,10 +121,13 @@ extension ProfilePaymentCell {
 		balanceInProcessValueLabel.text = "Rp \(balanceString)"
 		
 		contentStacView.addArrangedSubview(balanceinProcessStackView)
+		balanceinProcessStackView.snp.makeConstraints { make in
+			make.height.equalTo(35)
+		}
 		contentStacView.setCustomSpacing(Constants.contentSpacing * 1.5, after: contentBalanceValueLabel)
 		chevronButton.snp.makeConstraints { make in
-			make.width.equalTo(Constants.padding / 1.5)
-			make.height.equalTo(12)
+			make.width.equalTo(10)
+			make.height.equalTo(15)
 		}
 	}
 }

@@ -36,7 +36,7 @@ internal final class SimulationVC: UIStackViewController {
 		view.label.textColor = .label
 		
 		let currencyView = UILabel()
-		currencyView.text = " Rp "
+		currencyView.text = "  Rp "
 		currencyView.textColor = .label
 		
 		// Textfield
@@ -56,7 +56,7 @@ internal final class SimulationVC: UIStackViewController {
 		view.label.textColor = .label
 		
 		let percentView = UILabel()
-		percentView.text = " % "
+		percentView.text = " %  "
 		percentView.textColor = .label
 		
 		// Textfield
@@ -78,7 +78,7 @@ internal final class SimulationVC: UIStackViewController {
 		view.label.textColor = .label
 		
 		let qtyView = UILabel()
-		qtyView.text = " Qty "
+		qtyView.text = " Qty  "
 		qtyView.textColor = .label
 		
 		// Textfield
@@ -128,7 +128,7 @@ internal final class SimulationVC: UIStackViewController {
 		view.label.textColor = .label
 		
 		let currencyView = UILabel()
-		currencyView.text = " Rp "
+		currencyView.text = "  Rp "
 		currencyView.textColor = .label
 		
 		// Textfield
