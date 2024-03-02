@@ -14,6 +14,18 @@
 		F28836522B92EC7E00D0B9A6 /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836512B92EC7E00D0B9A6 /* ProfileVM.swift */; };
 		F28836552B92ECB200D0B9A6 /* Combine+Cancelbag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836542B92ECB200D0B9A6 /* Combine+Cancelbag.swift */; };
 		F28836572B92ED1500D0B9A6 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836562B92ED1500D0B9A6 /* ProfileVC.swift */; };
+		F288365C2B92EDBE00D0B9A6 /* ProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288365B2B92EDBE00D0B9A6 /* ProfileUseCase.swift */; };
+		F28836602B92EE3700D0B9A6 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288365F2B92EE3700D0B9A6 /* ProfileRepository.swift */; };
+		F28836652B92EF1200D0B9A6 /* USER.json in Resources */ = {isa = PBXBuildFile; fileRef = F28836642B92EF1200D0B9A6 /* USER.json */; };
+		F28836672B92EF2B00D0B9A6 /* PAYMENTS.json in Resources */ = {isa = PBXBuildFile; fileRef = F28836662B92EF2B00D0B9A6 /* PAYMENTS.json */; };
+		F28836692B92EF4900D0B9A6 /* BANNERS.json in Resources */ = {isa = PBXBuildFile; fileRef = F28836682B92EF4900D0B9A6 /* BANNERS.json */; };
+		F288366B2B92EF8000D0B9A6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288366A2B92EF8000D0B9A6 /* User.swift */; };
+		F288366E2B92EFA900D0B9A6 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288366D2B92EFA900D0B9A6 /* UserResponse.swift */; };
+		F28836702B92F00800D0B9A6 /* PersistenceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288366F2B92F00800D0B9A6 /* PersistenceError.swift */; };
+		F28836732B92F09900D0B9A6 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836722B92F09900D0B9A6 /* PersistenceManager.swift */; };
+		F28836762B92FBF700D0B9A6 /* Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836752B92FBF700D0B9A6 /* Payments.swift */; };
+		F288367A2B92FC0E00D0B9A6 /* PaymentsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836792B92FC0E00D0B9A6 /* PaymentsResponse.swift */; };
+		F288367C2B92FDD600D0B9A6 /* BannersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288367B2B92FDD600D0B9A6 /* BannersResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +38,18 @@
 		F28836512B92EC7E00D0B9A6 /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
 		F28836542B92ECB200D0B9A6 /* Combine+Cancelbag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Cancelbag.swift"; sourceTree = "<group>"; };
 		F28836562B92ED1500D0B9A6 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		F288365B2B92EDBE00D0B9A6 /* ProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUseCase.swift; sourceTree = "<group>"; };
+		F288365F2B92EE3700D0B9A6 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
+		F28836642B92EF1200D0B9A6 /* USER.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = USER.json; sourceTree = "<group>"; };
+		F28836662B92EF2B00D0B9A6 /* PAYMENTS.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PAYMENTS.json; sourceTree = "<group>"; };
+		F28836682B92EF4900D0B9A6 /* BANNERS.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BANNERS.json; sourceTree = "<group>"; };
+		F288366A2B92EF8000D0B9A6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F288366D2B92EFA900D0B9A6 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		F288366F2B92F00800D0B9A6 /* PersistenceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceError.swift; sourceTree = "<group>"; };
+		F28836722B92F09900D0B9A6 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		F28836752B92FBF700D0B9A6 /* Payments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payments.swift; sourceTree = "<group>"; };
+		F28836792B92FC0E00D0B9A6 /* PaymentsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsResponse.swift; sourceTree = "<group>"; };
+		F288367B2B92FDD600D0B9A6 /* BannersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannersResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +82,7 @@
 		F28836362B92E9C500D0B9A6 /* SimpleReactiveSwift */ = {
 			isa = PBXGroup;
 			children = (
+				F28836742B92F20D00D0B9A6 /* SupportedFiles */,
 				F28836532B92ECA400D0B9A6 /* Shared */,
 				F288364C2B92EA9700D0B9A6 /* Modules */,
 				F288364B2B92EA5700D0B9A6 /* Applications */,
@@ -88,6 +113,8 @@
 		F288364D2B92EA9E00D0B9A6 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				F28836592B92EDAC00D0B9A6 /* Data */,
+				F28836582B92EDA500D0B9A6 /* Domain */,
 				F288364E2B92EAAE00D0B9A6 /* Presentation */,
 			);
 			path = Profile;
@@ -105,9 +132,82 @@
 		F28836532B92ECA400D0B9A6 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F28836712B92F07900D0B9A6 /* Persistence */,
 				F28836542B92ECB200D0B9A6 /* Combine+Cancelbag.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		F28836582B92EDA500D0B9A6 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F288365D2B92EDCB00D0B9A6 /* Entities */,
+				F288365A2B92EDB000D0B9A6 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F28836592B92EDAC00D0B9A6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F288366C2B92EF9E00D0B9A6 /* Responses */,
+				F288365E2B92EDFF00D0B9A6 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F288365A2B92EDB000D0B9A6 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F288365B2B92EDBE00D0B9A6 /* ProfileUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		F288365D2B92EDCB00D0B9A6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F288366A2B92EF8000D0B9A6 /* User.swift */,
+				F28836752B92FBF700D0B9A6 /* Payments.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		F288365E2B92EDFF00D0B9A6 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				F288365F2B92EE3700D0B9A6 /* ProfileRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		F288366C2B92EF9E00D0B9A6 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				F288366D2B92EFA900D0B9A6 /* UserResponse.swift */,
+				F28836792B92FC0E00D0B9A6 /* PaymentsResponse.swift */,
+				F288367B2B92FDD600D0B9A6 /* BannersResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		F28836712B92F07900D0B9A6 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				F288366F2B92F00800D0B9A6 /* PersistenceError.swift */,
+				F28836722B92F09900D0B9A6 /* PersistenceManager.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		F28836742B92F20D00D0B9A6 /* SupportedFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F28836642B92EF1200D0B9A6 /* USER.json */,
+				F28836662B92EF2B00D0B9A6 /* PAYMENTS.json */,
+				F28836682B92EF4900D0B9A6 /* BANNERS.json */,
+			);
+			path = SupportedFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,8 +268,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F28836652B92EF1200D0B9A6 /* USER.json in Resources */,
+				F28836692B92EF4900D0B9A6 /* BANNERS.json in Resources */,
 				F28836442B92E9C700D0B9A6 /* LaunchScreen.storyboard in Resources */,
 				F28836412B92E9C700D0B9A6 /* Assets.xcassets in Resources */,
+				F28836672B92EF2B00D0B9A6 /* PAYMENTS.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,10 +284,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				F28836572B92ED1500D0B9A6 /* ProfileVC.swift in Sources */,
+				F288365C2B92EDBE00D0B9A6 /* ProfileUseCase.swift in Sources */,
+				F28836602B92EE3700D0B9A6 /* ProfileRepository.swift in Sources */,
 				F28836552B92ECB200D0B9A6 /* Combine+Cancelbag.swift in Sources */,
+				F288366B2B92EF8000D0B9A6 /* User.swift in Sources */,
 				F28836382B92E9C500D0B9A6 /* AppDelegate.swift in Sources */,
+				F28836762B92FBF700D0B9A6 /* Payments.swift in Sources */,
 				F28836522B92EC7E00D0B9A6 /* ProfileVM.swift in Sources */,
 				F288363A2B92E9C500D0B9A6 /* SceneDelegate.swift in Sources */,
+				F288367A2B92FC0E00D0B9A6 /* PaymentsResponse.swift in Sources */,
+				F288367C2B92FDD600D0B9A6 /* BannersResponse.swift in Sources */,
+				F28836702B92F00800D0B9A6 /* PersistenceError.swift in Sources */,
+				F28836732B92F09900D0B9A6 /* PersistenceManager.swift in Sources */,
+				F288366E2B92EFA900D0B9A6 /* UserResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

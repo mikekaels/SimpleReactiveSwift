@@ -1,0 +1,6 @@
+{
+	"payments": {
+		"balance": 1500000,
+		"in_process_balance": 20000
+	}
+}
