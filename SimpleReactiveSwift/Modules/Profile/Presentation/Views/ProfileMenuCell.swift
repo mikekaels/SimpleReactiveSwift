@@ -11,8 +11,6 @@ import Combine
 import CombineCocoa
 
 internal final class ProfileMenuCell: UITableViewCell {
-	
-
 	internal let cancellables = CancelBag()
 	internal var menuDidTapPublisher = PassthroughSubject<ProfileVM.ActionType, Never>()
 	
@@ -128,7 +126,7 @@ internal final class ProfileMenuCell: UITableViewCell {
 				make.height.equalTo(15)
 			}
 			
-			menuWrapperView.tapPublisher
+			menuWrapperView.canBeTapPublisher
 				.sink { [weak self] _ in
 					self?.menuDidTapPublisher.send(.default(menu))
 				}
@@ -169,7 +167,7 @@ internal final class ProfileMenuCell: UITableViewCell {
 		}
 		
 		if case .none = menu.valueType {
-			menuWrapperView.tapPublisher
+			menuWrapperView.canBeTapPublisher
 				.sink { [weak self] _ in
 					self?.menuDidTapPublisher.send(.default(menu))
 				}

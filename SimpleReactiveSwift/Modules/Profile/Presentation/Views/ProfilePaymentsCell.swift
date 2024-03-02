@@ -15,7 +15,7 @@ internal final class ProfilePaymentCell: UITableViewCell {
 		setupLayout()
 		
 		registerForTraitChanges([UITraitUserInterfaceStyle.self], handler: { (self: Self, previousTraitCollection: UITraitCollection) in
-			self.balanceinProcessStackView.layer.borderColor = UIColor.label.cgColor
+			self.balanceinProcessStackView.layer.borderColor = UIColor.dynamicColor.cgColor
 		})
 	}
 	
@@ -33,7 +33,7 @@ internal final class ProfilePaymentCell: UITableViewCell {
 	private let contentBalanceLabel: UILabel = {
 		let label = UILabel()
 		label.font = .systemFont(ofSize: 16)
-		label.textColor = .label
+		label.textColor = .dynamicColor
 		label.text = "Balance"
 		return label
 	}()
@@ -41,7 +41,7 @@ internal final class ProfilePaymentCell: UITableViewCell {
 	private let contentBalanceValueLabel: UILabel = {
 		let label = UILabel()
 		label.font = .systemFont(ofSize: 16, weight: .bold)
-		label.textColor = .label
+		label.textColor = .dynamicColor
 		return label
 	}()
 	
@@ -57,7 +57,7 @@ internal final class ProfilePaymentCell: UITableViewCell {
 	private lazy var balanceInProcessLabel: UILabel = {
 		let label = UILabel()
 		label.font = .systemFont(ofSize: 14)
-		label.textColor = .label
+		label.textColor = .dynamicColor
 		label.text = "Balance in process"
 		return label
 	}()
@@ -65,7 +65,7 @@ internal final class ProfilePaymentCell: UITableViewCell {
 	private lazy var balanceInProcessValueLabel: UILabel = {
 		let label = UILabel()
 		label.font = .systemFont(ofSize: 14, weight: .semibold)
-		label.textColor = .label
+		label.textColor = .dynamicColor
 		label.text = "Rp 20.000"
 		return label
 	}()
@@ -73,7 +73,7 @@ internal final class ProfilePaymentCell: UITableViewCell {
 	private lazy var chevronButton: UIButton = {
 		let button = UIButton()
 		button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
-		button.tintColor = .label
+		button.tintColor = .dynamicColor
 		return button
 	}()
 	
@@ -86,7 +86,7 @@ internal final class ProfilePaymentCell: UITableViewCell {
 		stack.axis = .horizontal
 		stack.layer.borderWidth = 1
 		stack.layer.cornerRadius = Constants.padding
-		stack.layer.borderColor = UIColor.label.cgColor
+		stack.layer.borderColor = UIColor.dynamicColor.cgColor
 		let padding = Constants.padding / 1.5
 		stack.directionalLayoutMargins = NSDirectionalEdgeInsets(top: padding, leading: padding, bottom: padding, trailing: padding)
 		stack.isLayoutMarginsRelativeArrangement = true
@@ -110,27 +110,19 @@ internal final class ProfilePaymentCell: UITableViewCell {
 
 extension ProfilePaymentCell {
 	internal func set(balance: Int) {
-		let numberFormater = NumberFormatter()
-		numberFormater.numberStyle = .decimal
-		if let balanceString = numberFormater.string(from: NSNumber(value: balance)) {
-			contentBalanceValueLabel.text = "Rp \(balanceString)"
-		}
+		contentBalanceValueLabel.text = "Rp \(balance.toDecimalString())"
 	}
 	
 	internal func set(balanceInProcess: Int) {
 		guard balanceInProcess > 0 else { return }
-		let numberFormater = NumberFormatter()
-		numberFormater.numberStyle = .decimal
-		if let balanceString = numberFormater.string(from: NSNumber(value: balanceInProcess)) {
-			balanceInProcessValueLabel.text = "Rp \(balanceString)"
-			
-			contentStacView.addArrangedSubview(balanceinProcessStackView)
-			contentStacView.setCustomSpacing(Constants.contentSpacing * 1.5, after: contentBalanceValueLabel)
-			chevronButton.snp.makeConstraints { make in
-				make.width.equalTo(Constants.padding / 1.5)
-				make.height.equalTo(12)
-			}
+		let balanceString = balanceInProcess.toDecimalString()
+		balanceInProcessValueLabel.text = "Rp \(balanceString)"
+		
+		contentStacView.addArrangedSubview(balanceinProcessStackView)
+		contentStacView.setCustomSpacing(Constants.contentSpacing * 1.5, after: contentBalanceValueLabel)
+		chevronButton.snp.makeConstraints { make in
+			make.width.equalTo(Constants.padding / 1.5)
+			make.height.equalTo(12)
 		}
 	}
 }
-

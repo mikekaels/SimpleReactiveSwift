@@ -204,7 +204,7 @@ extension ProfileVM {
 		action.menuDidTap
 			.sink { [weak self] actionType in
 				if case let .default(menu) = actionType {
-					print(menu.title)
+					Routing.push(.simulation)
 				}
 				
 				if case let .switch(menu, isOn) = actionType {

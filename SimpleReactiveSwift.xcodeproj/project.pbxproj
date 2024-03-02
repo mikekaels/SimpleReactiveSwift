@@ -39,6 +39,27 @@
 		F28836992B9338A700D0B9A6 /* ProfileMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836982B9338A700D0B9A6 /* ProfileMenuCell.swift */; };
 		F288369C2B93453E00D0B9A6 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = F288369B2B93453E00D0B9A6 /* CombineCocoa */; };
 		F288369E2B9345D700D0B9A6 /* UIView+TapPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288369D2B9345D700D0B9A6 /* UIView+TapPublisher.swift */; };
+		F28836A12B935EF500D0B9A6 /* RoutingDependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836A02B935EF500D0B9A6 /* RoutingDependencyManager.swift */; };
+		F28836A42B935F2000D0B9A6 /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836A32B935F2000D0B9A6 /* Routing.swift */; };
+		F28836A62B93612900D0B9A6 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836A52B93612900D0B9A6 /* Route.swift */; };
+		F28836A82B93621900D0B9A6 /* UIApplication+TopMostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836A72B93621900D0B9A6 /* UIApplication+TopMostVC.swift */; };
+		F28836AC2B93848E00D0B9A6 /* SimulationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836AB2B93848E00D0B9A6 /* SimulationVC.swift */; };
+		F28836AE2B93849500D0B9A6 /* SimulationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836AD2B93849500D0B9A6 /* SimulationVM.swift */; };
+		F28836B02B93851000D0B9A6 /* UIStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836AF2B93851000D0B9A6 /* UIStackViewController.swift */; };
+		F28836B22B93859F00D0B9A6 /* TextfieldWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836B12B93859F00D0B9A6 /* TextfieldWrapperView.swift */; };
+		F28836B52B938BCD00D0B9A6 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F28836B42B938BCD00D0B9A6 /* IQKeyboardManagerSwift */; };
+		F28836B72B938BE600D0B9A6 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836B62B938BE600D0B9A6 /* DependencyManager.swift */; };
+		F28836B92B939D3100D0B9A6 /* UIAttributedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836B82B939D3100D0B9A6 /* UIAttributedLabel.swift */; };
+		F28836BB2B939DCD00D0B9A6 /* Int+ToDecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836BA2B939DCD00D0B9A6 /* Int+ToDecimal.swift */; };
+		F28836BE2B939DFA00D0B9A6 /* MultipleSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836BD2B939DFA00D0B9A6 /* MultipleSelectButton.swift */; };
+		F28836C02B93A3BB00D0B9A6 /* SIMULATION.json in Resources */ = {isa = PBXBuildFile; fileRef = F28836BF2B93A3BB00D0B9A6 /* SIMULATION.json */; };
+		F28836C52B93A3DF00D0B9A6 /* SimulationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836C42B93A3DF00D0B9A6 /* SimulationUseCase.swift */; };
+		F28836C92B93A43500D0B9A6 /* SimulationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836C82B93A43500D0B9A6 /* SimulationRepository.swift */; };
+		F28836CB2B93A46E00D0B9A6 /* SimulationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836CA2B93A46E00D0B9A6 /* SimulationResponse.swift */; };
+		F28836D02B93A51200D0B9A6 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836CF2B93A51200D0B9A6 /* Simulation.swift */; };
+		F28836D22B93A7A800D0B9A6 /* String+toDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836D12B93A7A800D0B9A6 /* String+toDouble.swift */; };
+		F28836D42B93AD9A00D0B9A6 /* String+ToSimpleDateString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836D32B93AD9A00D0B9A6 /* String+ToSimpleDateString.swift */; };
+		F28836D62B93AE6C00D0B9A6 /* String+CalculateNMonthsLater.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28836D52B93AE6C00D0B9A6 /* String+CalculateNMonthsLater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +94,26 @@
 		F28836962B93315F00D0B9A6 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		F28836982B9338A700D0B9A6 /* ProfileMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuCell.swift; sourceTree = "<group>"; };
 		F288369D2B9345D700D0B9A6 /* UIView+TapPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TapPublisher.swift"; sourceTree = "<group>"; };
+		F28836A02B935EF500D0B9A6 /* RoutingDependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingDependencyManager.swift; sourceTree = "<group>"; };
+		F28836A32B935F2000D0B9A6 /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
+		F28836A52B93612900D0B9A6 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		F28836A72B93621900D0B9A6 /* UIApplication+TopMostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopMostVC.swift"; sourceTree = "<group>"; };
+		F28836AB2B93848E00D0B9A6 /* SimulationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationVC.swift; sourceTree = "<group>"; };
+		F28836AD2B93849500D0B9A6 /* SimulationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationVM.swift; sourceTree = "<group>"; };
+		F28836AF2B93851000D0B9A6 /* UIStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewController.swift; sourceTree = "<group>"; };
+		F28836B12B93859F00D0B9A6 /* TextfieldWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldWrapperView.swift; sourceTree = "<group>"; };
+		F28836B62B938BE600D0B9A6 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
+		F28836B82B939D3100D0B9A6 /* UIAttributedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAttributedLabel.swift; sourceTree = "<group>"; };
+		F28836BA2B939DCD00D0B9A6 /* Int+ToDecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+ToDecimal.swift"; sourceTree = "<group>"; };
+		F28836BD2B939DFA00D0B9A6 /* MultipleSelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectButton.swift; sourceTree = "<group>"; };
+		F28836BF2B93A3BB00D0B9A6 /* SIMULATION.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SIMULATION.json; sourceTree = "<group>"; };
+		F28836C42B93A3DF00D0B9A6 /* SimulationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationUseCase.swift; sourceTree = "<group>"; };
+		F28836C82B93A43500D0B9A6 /* SimulationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationRepository.swift; sourceTree = "<group>"; };
+		F28836CA2B93A46E00D0B9A6 /* SimulationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulationResponse.swift; sourceTree = "<group>"; };
+		F28836CF2B93A51200D0B9A6 /* Simulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
+		F28836D12B93A7A800D0B9A6 /* String+toDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+toDouble.swift"; sourceTree = "<group>"; };
+		F28836D32B93AD9A00D0B9A6 /* String+ToSimpleDateString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ToSimpleDateString.swift"; sourceTree = "<group>"; };
+		F28836D52B93AE6C00D0B9A6 /* String+CalculateNMonthsLater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+CalculateNMonthsLater.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +122,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F28836892B930C2000D0B9A6 /* SnapKit in Frameworks */,
+				F28836B52B938BCD00D0B9A6 /* IQKeyboardManagerSwift in Frameworks */,
 				F288369C2B93453E00D0B9A6 /* CombineCocoa in Frameworks */,
 				F288368B2B930C2000D0B9A6 /* SnapKit-Dynamic in Frameworks */,
 			);
@@ -122,6 +164,7 @@
 		F288364B2B92EA5700D0B9A6 /* Applications */ = {
 			isa = PBXGroup;
 			children = (
+				F288369F2B935EDC00D0B9A6 /* DependencyManager */,
 				F28836372B92E9C500D0B9A6 /* AppDelegate.swift */,
 				F28836392B92E9C500D0B9A6 /* SceneDelegate.swift */,
 			);
@@ -131,6 +174,7 @@
 		F288364C2B92EA9700D0B9A6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F28836A92B93847500D0B9A6 /* Simulation */,
 				F288364D2B92EA9E00D0B9A6 /* Profile */,
 			);
 			path = Modules;
@@ -159,11 +203,15 @@
 		F28836532B92ECA400D0B9A6 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F28836BC2B939DEC00D0B9A6 /* Components */,
+				F28836A22B935F1900D0B9A6 /* Routing */,
 				F288368E2B931F9C00D0B9A6 /* Constants */,
 				F28836822B9305B300D0B9A6 /* Extensions */,
 				F28836712B92F07900D0B9A6 /* Persistence */,
 				F28836542B92ECB200D0B9A6 /* Combine+Cancelbag.swift */,
 				F28836942B932FEB00D0B9A6 /* BannerCollectionFlowLayout.swift */,
+				F28836AF2B93851000D0B9A6 /* UIStackViewController.swift */,
+				F28836B12B93859F00D0B9A6 /* TextfieldWrapperView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -236,6 +284,7 @@
 				F28836642B92EF1200D0B9A6 /* USER.json */,
 				F28836662B92EF2B00D0B9A6 /* PAYMENTS.json */,
 				F28836682B92EF4900D0B9A6 /* BANNERS.json */,
+				F28836BF2B93A3BB00D0B9A6 /* SIMULATION.json */,
 			);
 			path = SupportedFiles;
 			sourceTree = "<group>";
@@ -258,6 +307,12 @@
 				F28836832B9305C100D0B9A6 /* NSObject+Identifier.swift */,
 				F28836962B93315F00D0B9A6 /* UIColor+hex.swift */,
 				F288369D2B9345D700D0B9A6 /* UIView+TapPublisher.swift */,
+				F28836A72B93621900D0B9A6 /* UIApplication+TopMostVC.swift */,
+				F28836BA2B939DCD00D0B9A6 /* Int+ToDecimal.swift */,
+				F28836B82B939D3100D0B9A6 /* UIAttributedLabel.swift */,
+				F28836D12B93A7A800D0B9A6 /* String+toDouble.swift */,
+				F28836D32B93AD9A00D0B9A6 /* String+ToSimpleDateString.swift */,
+				F28836D52B93AE6C00D0B9A6 /* String+CalculateNMonthsLater.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -276,6 +331,101 @@
 				F28836852B93064400D0B9A6 /* ProfileUserShimmerCell.swift */,
 			);
 			path = Shimmers;
+			sourceTree = "<group>";
+		};
+		F288369F2B935EDC00D0B9A6 /* DependencyManager */ = {
+			isa = PBXGroup;
+			children = (
+				F28836A02B935EF500D0B9A6 /* RoutingDependencyManager.swift */,
+				F28836B62B938BE600D0B9A6 /* DependencyManager.swift */,
+			);
+			path = DependencyManager;
+			sourceTree = "<group>";
+		};
+		F28836A22B935F1900D0B9A6 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				F28836A52B93612900D0B9A6 /* Route.swift */,
+				F28836A32B935F2000D0B9A6 /* Routing.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		F28836A92B93847500D0B9A6 /* Simulation */ = {
+			isa = PBXGroup;
+			children = (
+				F28836C22B93A3D100D0B9A6 /* Data */,
+				F28836C12B93A3CC00D0B9A6 /* Domain */,
+				F28836AA2B93848200D0B9A6 /* Presentation */,
+			);
+			path = Simulation;
+			sourceTree = "<group>";
+		};
+		F28836AA2B93848200D0B9A6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F28836AB2B93848E00D0B9A6 /* SimulationVC.swift */,
+				F28836AD2B93849500D0B9A6 /* SimulationVM.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F28836BC2B939DEC00D0B9A6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F28836BD2B939DFA00D0B9A6 /* MultipleSelectButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F28836C12B93A3CC00D0B9A6 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F28836CC2B93A4F200D0B9A6 /* Entities */,
+				F28836C32B93A3D500D0B9A6 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F28836C22B93A3D100D0B9A6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F28836C72B93A42700D0B9A6 /* Repositories */,
+				F28836C62B93A42200D0B9A6 /* Responses */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F28836C32B93A3D500D0B9A6 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F28836C42B93A3DF00D0B9A6 /* SimulationUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		F28836C62B93A42200D0B9A6 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				F28836CA2B93A46E00D0B9A6 /* SimulationResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		F28836C72B93A42700D0B9A6 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				F28836C82B93A43500D0B9A6 /* SimulationRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		F28836CC2B93A4F200D0B9A6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F28836CF2B93A51200D0B9A6 /* Simulation.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +448,7 @@
 				F28836882B930C2000D0B9A6 /* SnapKit */,
 				F288368A2B930C2000D0B9A6 /* SnapKit-Dynamic */,
 				F288369B2B93453E00D0B9A6 /* CombineCocoa */,
+				F28836B42B938BCD00D0B9A6 /* IQKeyboardManagerSwift */,
 			);
 			productName = SimpleReactiveSwift;
 			productReference = F28836342B92E9C500D0B9A6 /* SimpleReactiveSwift.app */;
@@ -330,6 +481,7 @@
 			packageReferences = (
 				F28836872B930C2000D0B9A6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				F288369A2B93453E00D0B9A6 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
+				F28836B32B938BCD00D0B9A6 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = F28836352B92E9C500D0B9A6 /* Products */;
 			projectDirPath = "";
@@ -345,6 +497,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F28836C02B93A3BB00D0B9A6 /* SIMULATION.json in Resources */,
 				F28836652B92EF1200D0B9A6 /* USER.json in Resources */,
 				F28836692B92EF4900D0B9A6 /* BANNERS.json in Resources */,
 				F28836442B92E9C700D0B9A6 /* LaunchScreen.storyboard in Resources */,
@@ -360,29 +513,48 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F28836D42B93AD9A00D0B9A6 /* String+ToSimpleDateString.swift in Sources */,
 				F288368D2B9313A400D0B9A6 /* ProfilePaymentsCell.swift in Sources */,
 				F28836902B931FA700D0B9A6 /* Constants.swift in Sources */,
+				F28836A42B935F2000D0B9A6 /* Routing.swift in Sources */,
 				F28836572B92ED1500D0B9A6 /* ProfileVC.swift in Sources */,
+				F28836D62B93AE6C00D0B9A6 /* String+CalculateNMonthsLater.swift in Sources */,
 				F288365C2B92EDBE00D0B9A6 /* ProfileUseCase.swift in Sources */,
+				F28836B02B93851000D0B9A6 /* UIStackViewController.swift in Sources */,
 				F28836952B932FEB00D0B9A6 /* BannerCollectionFlowLayout.swift in Sources */,
 				F28836602B92EE3700D0B9A6 /* ProfileRepository.swift in Sources */,
 				F28836552B92ECB200D0B9A6 /* Combine+Cancelbag.swift in Sources */,
 				F28836972B93315F00D0B9A6 /* UIColor+hex.swift in Sources */,
+				F28836B72B938BE600D0B9A6 /* DependencyManager.swift in Sources */,
 				F288366B2B92EF8000D0B9A6 /* User.swift in Sources */,
 				F28836862B93064400D0B9A6 /* ProfileUserShimmerCell.swift in Sources */,
+				F28836CB2B93A46E00D0B9A6 /* SimulationResponse.swift in Sources */,
 				F28836382B92E9C500D0B9A6 /* AppDelegate.swift in Sources */,
+				F28836C52B93A3DF00D0B9A6 /* SimulationUseCase.swift in Sources */,
+				F28836A12B935EF500D0B9A6 /* RoutingDependencyManager.swift in Sources */,
 				F288369E2B9345D700D0B9A6 /* UIView+TapPublisher.swift in Sources */,
 				F28836762B92FBF700D0B9A6 /* Payments.swift in Sources */,
+				F28836C92B93A43500D0B9A6 /* SimulationRepository.swift in Sources */,
 				F28836992B9338A700D0B9A6 /* ProfileMenuCell.swift in Sources */,
 				F28836522B92EC7E00D0B9A6 /* ProfileVM.swift in Sources */,
 				F288363A2B92E9C500D0B9A6 /* SceneDelegate.swift in Sources */,
+				F28836A62B93612900D0B9A6 /* Route.swift in Sources */,
 				F28836812B93052C00D0B9A6 /* ProfileUserCell.swift in Sources */,
 				F28836922B9320EA00D0B9A6 /* ProfileBannersCell.swift in Sources */,
+				F28836AE2B93849500D0B9A6 /* SimulationVM.swift in Sources */,
 				F28836842B9305C100D0B9A6 /* NSObject+Identifier.swift in Sources */,
+				F28836BE2B939DFA00D0B9A6 /* MultipleSelectButton.swift in Sources */,
 				F288367A2B92FC0E00D0B9A6 /* PaymentsResponse.swift in Sources */,
+				F28836AC2B93848E00D0B9A6 /* SimulationVC.swift in Sources */,
+				F28836B22B93859F00D0B9A6 /* TextfieldWrapperView.swift in Sources */,
+				F28836D02B93A51200D0B9A6 /* Simulation.swift in Sources */,
 				F288367C2B92FDD600D0B9A6 /* BannersResponse.swift in Sources */,
+				F28836A82B93621900D0B9A6 /* UIApplication+TopMostVC.swift in Sources */,
+				F28836B92B939D3100D0B9A6 /* UIAttributedLabel.swift in Sources */,
 				F28836702B92F00800D0B9A6 /* PersistenceError.swift in Sources */,
+				F28836BB2B939DCD00D0B9A6 /* Int+ToDecimal.swift in Sources */,
 				F28836732B92F09900D0B9A6 /* PersistenceManager.swift in Sources */,
+				F28836D22B93A7A800D0B9A6 /* String+toDouble.swift in Sources */,
 				F288366E2B92EFA900D0B9A6 /* UserResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,6 +786,14 @@
 				minimumVersion = 0.4.1;
 			};
 		};
+		F28836B32B938BCD00D0B9A6 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -631,6 +811,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F288369A2B93453E00D0B9A6 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
 			productName = CombineCocoa;
+		};
+		F28836B42B938BCD00D0B9A6 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F28836B32B938BCD00D0B9A6 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

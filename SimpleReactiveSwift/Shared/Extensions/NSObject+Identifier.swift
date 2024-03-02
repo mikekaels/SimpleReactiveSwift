@@ -8,11 +8,11 @@
 import Foundation
 
 extension NSObject {
-	public var identifier: String {
+	internal var identifier: String {
 		String(describing: type(of: self))
 	}
 	
-	public static var identifier: String {
+	internal static var identifier: String {
 		String(describing: self)
 	}
 }

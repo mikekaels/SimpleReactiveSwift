@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 extension UIView {
-	var tapPublisher: AnyPublisher<Void, Never> {
+	internal var canBeTapPublisher: AnyPublisher<Void, Never> {
 		let tapGestureRecognizer = UITapGestureRecognizer()
 		self.addGestureRecognizer(tapGestureRecognizer)
 		self.isUserInteractionEnabled = true

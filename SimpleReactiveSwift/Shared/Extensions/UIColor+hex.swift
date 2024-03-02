@@ -8,17 +8,11 @@
 import UIKit
 
 extension UIColor {
-	internal convenience init(light: UIColor, dark: UIColor) {
-		if #available(iOS 13.0, *) {
-			self.init { (traitCollection) -> UIColor in
-				traitCollection.userInterfaceStyle == .dark ? light : light
-			}
-		} else {
-			self.init(cgColor: light.cgColor)
-		}
+	internal static let dynamicColor = UIColor { traitCollection in
+		return UIApplication.shared.keyWindow?.traitCollection.userInterfaceStyle == .dark ? .white : .black
 	}
 	
-	public convenience init(hex: String) {
+	internal convenience init(hex: String) {
 		var r: CGFloat = 0
 		var g: CGFloat = 0
 		var b: CGFloat = 0

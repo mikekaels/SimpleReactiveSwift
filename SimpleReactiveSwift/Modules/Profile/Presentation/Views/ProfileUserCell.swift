@@ -15,7 +15,7 @@ internal final class ProfileUserCell: UITableViewCell {
 		setupLayout()
 		
 		registerForTraitChanges([UITraitUserInterfaceStyle.self], handler: { (self: Self, previousTraitCollection: UITraitCollection) in
-			self.contentAvatarView.layer.borderColor = UIColor.label.cgColor
+			self.contentAvatarView.layer.borderColor = UIColor.dynamicColor.cgColor
 		})
 	}
 	
@@ -34,14 +34,14 @@ internal final class ProfileUserCell: UITableViewCell {
 		let imageView = UIImageView()
 		imageView.layer.borderWidth = 1
 		imageView.layer.cornerRadius = 30
-		imageView.layer.borderColor = UIColor.label.cgColor
+		imageView.layer.borderColor = UIColor.dynamicColor.cgColor
 		return imageView
 	}()
 	
 	private let contentNameLabel: UILabel = {
 		let label = UILabel()
 		label.font = .systemFont(ofSize: 20, weight: .bold)
-		label.textColor = .label
+		label.textColor = .dynamicColor
 		return label
 	}()
 	
