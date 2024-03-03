@@ -15,51 +15,15 @@ internal final class SimulationVM {
 	init(useCase: SimulationUseCaseProtocol = SimulationUseCase()) {
 		self.useCase = useCase
 	}
-	
-	enum ESTReturnType: HasTitle {
-		
-		
-		case sixMonth
-		case oneYear
-		case threeYear
-		case fiveYear
-		
-		var title: String {
-			switch self {
-			case .sixMonth: return "6M"
-			case .oneYear: return "1Y"
-			case .threeYear: return "3Y"
-			case .fiveYear: return "5Y"
-			}
-		}
-		
-		var value: Double {
-			switch self {
-			case .sixMonth: return 0.5
-			case .oneYear: return 1
-			case .threeYear: return 3
-			case .fiveYear: return 5
-			}
-		}
-		
-		var initialSelectedState: Bool {
-			switch self {
-			case .sixMonth: return false
-			case .oneYear: return false
-			case .threeYear: return false
-			case .fiveYear: return true
-			}
-		}
-	}
 }
 
 extension SimulationVM {
 	struct Action {
-		let didLoad: AnyPublisher<Void, Never>
+		let didLoad: PassthroughSubject<Void, Never>
 		let marketPriceDidChange: AnyPublisher<String?, Never>
-		let estReturnDidChange: AnyPublisher<ESTReturnType, Never>
-		let calculateTotalInvestment = PassthroughSubject<Void, Never>()
-		let calculateDateFromAndTo = PassthroughSubject<Void, Never>()
+		let estReturnDidChange: PassthroughSubject<ESTReturnType, Never>
+		let calculateTotalInvestment: PassthroughSubject<Void, Never>
+		let calculateDateFromAndTo: PassthroughSubject<Void, Never>
 	}
 	
 	class State {
@@ -90,7 +54,6 @@ extension SimulationVM {
 				}
 				
 				if case let .success(simulation) = result {
-					print(simulation)
 					state.marketPrice = simulation.marketPrice
 					state.yearlyProjection = simulation.yearlyProjection
 					state.investmentDateFrom = simulation.investmentDate.toSimpleDateString()
@@ -104,8 +67,12 @@ extension SimulationVM {
 			.store(in: cancellables)
 		
 		action.calculateTotalInvestment
-			.sink { _ in
-				let result = state.marketPrice * state.yearlyProjection * state.qtyOwned * state.estReturn
+			.sink { [weak self] _ in
+				guard let self = self else { return }
+				let result = self.useCase.getTotalInvestment(marketPrice: state.marketPrice,
+															 yearlyProjection: state.yearlyProjection,
+															 qtyOwned: state.qtyOwned,
+															 estReturn: state.estReturn)
 				state.totalInvestment = result
 			}
 			.store(in: cancellables)

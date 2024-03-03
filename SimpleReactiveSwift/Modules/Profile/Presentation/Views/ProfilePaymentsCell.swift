@@ -7,16 +7,25 @@
 
 import UIKit
 import SnapKit
+import Combine
 
 internal final class ProfilePaymentCell: UITableViewCell {
+	internal let cancellables = CancelBag()
+	internal var balanceInProgressTappedPublisher = PassthroughSubject<Void, Never>()
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		selectionStyle = .none
 		setupLayout()
+		bindView()
 		
 		registerForTraitChanges([UITraitUserInterfaceStyle.self], handler: { (self: Self, previousTraitCollection: UITraitCollection) in
 			self.balanceinProcessStackView.layer.borderColor = UIColor.dynamicColor.cgColor
 		})
+	}
+	
+	override func prepareForReuse() {
+		super.prepareForReuse()
+		balanceInProgressTappedPublisher = PassthroughSubject<Void, Never>()
 	}
 	
 	required init?(coder: NSCoder) {
@@ -74,6 +83,7 @@ internal final class ProfilePaymentCell: UITableViewCell {
 		let button = UIButton()
 		button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
 		button.tintColor = .dynamicColor
+		button.isUserInteractionEnabled = false
 		return button
 	}()
 	
@@ -107,6 +117,14 @@ internal final class ProfilePaymentCell: UITableViewCell {
 		contentStacView.snp.makeConstraints { make in
 			make.edges.equalToSuperview().inset(Constants.padding)
 		}
+	}
+	
+	private func bindView() {
+		balanceinProcessStackView.canBeTapPublisher
+			.sink { [weak self] _ in
+				self?.balanceInProgressTappedPublisher.send(())
+			}
+			.store(in: cancellables)
 	}
 }
 

@@ -27,8 +27,18 @@ internal enum RoutingDependencyManager {
 			let vm = SimulationVM()
 			let vc = SimulationVC(viewModel: vm)
 			Routing.navigationMethodHandler(method: method, vc: vc, from: viewController, animated: animated, isFullScreen: isFullScreen, completion: routeCompletion)
-		case .component:
-			break
+			
+		case let .component(component):
+			if case let .alert(firstCompletion, secondCompletion) = component {
+				let alert = UIAlertController(title: "Logout", message: "are you sure?", preferredStyle: .alert)
+				alert.addAction(UIAlertAction(title: "Logout", style: .default, handler: { _ in firstCompletion?()
+				}))
+				
+				alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { _ in
+					secondCompletion?()
+				}))
+				viewController.present(alert, animated: true, completion: nil)
+			}
 		}
 	}
 }

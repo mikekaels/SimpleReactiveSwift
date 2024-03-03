@@ -9,5 +9,11 @@ import Foundation
 
 internal enum Route {
 	case simulation
-	case component
+	case component(Component)
+	
+	enum Component {
+		case alert(firstCompletion: (() -> Void)? = nil,
+				   secondCompletion: (() -> Void)? = nil
+		)
+	}
 }

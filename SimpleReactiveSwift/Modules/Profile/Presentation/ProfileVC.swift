@@ -10,10 +10,14 @@ import Combine
 import SnapKit
 
 internal final class ProfileVC: UIViewController {
+	enum Section: Hashable {
+		case main
+	}
+
 	private let viewModel: ProfileVM
 	private let cancellables = CancelBag()
 	private let didLoadPublisher = PassthroughSubject<Void, Never>()
-	private let menuDidTapPublisher = PassthroughSubject<ProfileVM.ActionType, Never>()
+	private let menuDidTapPublisher = PassthroughSubject<MenuActionType, Never>()
 	
 	init(viewModel: ProfileVM = ProfileVM()) {
 		self.viewModel = viewModel
@@ -43,16 +47,22 @@ internal final class ProfileVC: UIViewController {
 		
 		tableView.register(ProfilePaymentCell.self, forCellReuseIdentifier: ProfilePaymentCell.identifier)
 		
+		tableView.register(ProfilePaymentShimmerCell.self, forCellReuseIdentifier: ProfilePaymentShimmerCell.identifier)
+		
 		tableView.register(ProfileBannersCell.self, forCellReuseIdentifier: ProfileBannersCell.identifier)
 		
 		tableView.register(ProfileMenuCell.self, forCellReuseIdentifier: ProfileMenuCell.identifier)
 		return tableView
 	}()
 	
-	private lazy var dataSource: UITableViewDiffableDataSource<ProfileVM.Section, ProfileVM.SectionDataSourceType> = {
-		let dataSource = UITableViewDiffableDataSource<ProfileVM.Section, ProfileVM.SectionDataSourceType>(tableView: tableView) { [weak self] tableView, indexPath, type in
+	private lazy var dataSource: UITableViewDiffableDataSource<Section, ProfileSectionDataSourceType> = {
+		let dataSource = UITableViewDiffableDataSource<Section, ProfileSectionDataSourceType>(tableView: tableView) { [weak self] tableView, indexPath, type in
 			
 			if case .userSection(.loading) = type, let cell = tableView.dequeueReusableCell(withIdentifier: ProfileUserShimmerCell.identifier, for: indexPath) as? ProfileUserShimmerCell {
+				return cell
+			}
+			
+			if case .paymentsSection(.loading) = type, let cell = tableView.dequeueReusableCell(withIdentifier: ProfilePaymentShimmerCell.identifier, for: indexPath) as? ProfilePaymentShimmerCell {
 				return cell
 			}
 			
@@ -64,6 +74,12 @@ internal final class ProfileVC: UIViewController {
 			if case let .paymentsSection(.content(payment)) = type, let cell = tableView.dequeueReusableCell(withIdentifier: ProfilePaymentCell.identifier, for: indexPath) as? ProfilePaymentCell {
 				cell.set(balance: payment.balance)
 				cell.set(balanceInProcess: payment.inProcessBalance)
+				
+				cell.balanceInProgressTappedPublisher
+					.sink { [weak self] _ in
+						self?.menuDidTapPublisher.send(.default(.default))
+					}
+					.store(in: cell.cancellables)
 				return cell
 			}
 			
@@ -92,8 +108,11 @@ internal final class ProfileVC: UIViewController {
 	}()
 	
 	private func bindViewModel() {
-		let action = ProfileVM.Action(didLoad: didLoadPublisher.eraseToAnyPublisher(),
-									  menuDidTap: menuDidTapPublisher.eraseToAnyPublisher()
+		let action = ProfileVM.Action(didLoad: didLoadPublisher,
+									  menuDidTap: menuDidTapPublisher,
+									  getUser: .init(),
+									  getPayments: .init(),
+									  getBanners: .init()
 		)
 		
 		let state = viewModel.transform(action, cancellables)
@@ -102,7 +121,7 @@ internal final class ProfileVC: UIViewController {
 			.receive(on: DispatchQueue.main)
 			.sink { [weak self] contents in
 				guard let self = self else { return }
-				var snapshot = NSDiffableDataSourceSnapshot<ProfileVM.Section, ProfileVM.SectionDataSourceType>()
+				var snapshot = NSDiffableDataSourceSnapshot<Section, ProfileSectionDataSourceType>()
 				snapshot.appendSections([.main])
 				snapshot.appendItems(contents, toSection: .main)
 				self.dataSource.apply(snapshot, animatingDifferences: true)

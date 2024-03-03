@@ -14,6 +14,10 @@ internal protocol ProfileUseCaseProtocol {
 	func getBanners() -> AnyPublisher<[String], PersistenceError>
 	func isDarkModeOn() -> Bool
 	func switchAppearence(to: UIUserInterfaceStyle)
+	func getVersion() -> String
+	func doLogout()
+	func showAlert(firstCompletion: @escaping (() -> Void), secondCompletion: @escaping (() -> Void))
+	func goToSimulation()
 }
 
 internal final class ProfileUseCase {
@@ -25,6 +29,22 @@ internal final class ProfileUseCase {
 }
 
 extension ProfileUseCase: ProfileUseCaseProtocol {
+	func goToSimulation() {
+		Routing.push(.simulation)
+	}
+	
+	func showAlert(firstCompletion: @escaping (() -> Void), secondCompletion: @escaping (() -> Void)) {
+		Routing.present(.component(.alert(firstCompletion: firstCompletion, secondCompletion: secondCompletion)))
+	}
+	
+	func doLogout() {
+		print("do logout")
+	}
+	
+	func getVersion() -> String {
+		return "1.0.1"
+	}
+	
 	func switchAppearence(to style: UIUserInterfaceStyle) {
 		if let window = UIApplication.shared.keyWindow {
 			UIView.transition (with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {

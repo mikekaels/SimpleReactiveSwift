@@ -12,9 +12,9 @@ internal protocol SimulationRepositoryProtocol {
 }
 
 internal final class SimulationRepository {
-	let persistence: PersistenceManager
+	let persistence: PersistenceManagerProtocol
 	
-	init(persistence: PersistenceManager = PersistenceManager()) {
+	init(persistence: PersistenceManagerProtocol = PersistenceManager()) {
 		self.persistence = persistence
 	}
 }

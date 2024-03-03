@@ -13,7 +13,7 @@ import CombineCocoa
 internal final class SimulationVC: UIStackViewController {
 	private let viewModel: SimulationVM
 	private let cancellables = CancelBag()
-	private let estReturnDidTapPublisher = PassthroughSubject<SimulationVM.ESTReturnType, Never>()
+	private let estReturnDidTapPublisher = PassthroughSubject<ESTReturnType, Never>()
 	private let didLoadPublisher = PassthroughSubject<Void, Never>()
 	
 	init(viewModel: SimulationVM = SimulationVM()) {
@@ -25,6 +25,7 @@ internal final class SimulationVC: UIStackViewController {
 		super.viewDidLoad()
 		setupLayout()
 		bindViewModel()
+		didLoadPublisher.send(())
 	}
 	
 	private let marketPriceTextfieldWrapperView: TextFieldWrapperView = {
@@ -111,7 +112,7 @@ internal final class SimulationVC: UIStackViewController {
 	}()
 	
 	private let estReturnButtonView: UIMultipleSelectButton = {
-		let view = UIMultipleSelectButton<SimulationVM.ESTReturnType>()
+		let view = UIMultipleSelectButton<ESTReturnType>()
 		view.axis = .horizontal
 		view.distribution = .fillEqually
 		view.spacing = Constants.contentSpacing
@@ -155,9 +156,11 @@ internal final class SimulationVC: UIStackViewController {
 	}()
 	
 	private func bindViewModel() {
-		let action = SimulationVM.Action(didLoad: Just(()).eraseToAnyPublisher(),
+		let action = SimulationVM.Action(didLoad: didLoadPublisher,
 										 marketPriceDidChange: marketPriceTextfieldWrapperView.textField.textPublisher.eraseToAnyPublisher(),
-										 estReturnDidChange: estReturnButtonView.didTapPublisher.eraseToAnyPublisher()
+										 estReturnDidChange: estReturnButtonView.didTapPublisher,
+										 calculateTotalInvestment: .init(),
+										 calculateDateFromAndTo: .init()
 		)
 		
 		let state = viewModel.transform(action, cancellables)

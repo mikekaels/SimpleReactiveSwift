@@ -7,7 +7,11 @@
 
 import Foundation
 
-internal class PersistenceManager {
+internal protocol PersistenceManagerProtocol {
+	func loadObject<T: Codable>(from fileName: String) throws -> T
+}
+
+internal class PersistenceManager: PersistenceManagerProtocol {
 	func loadObject<T: Codable>(from fileName: String) throws -> T {
 		
 		guard let path = Bundle.main.path(forResource: fileName, ofType: "json") else {

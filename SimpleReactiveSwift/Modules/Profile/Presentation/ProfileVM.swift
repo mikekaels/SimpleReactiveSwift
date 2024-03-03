@@ -14,84 +14,21 @@ final class ProfileVM {
 	init(useCase: ProfileUseCaseProtocol = ProfileUseCase()) {
 		self.useCase = useCase
 	}
-	
-	enum Section: Hashable {
-		case main
-	}
-	
-	enum SectionDataSourceType: Hashable {
-		case userSection(StateType<User>)
-		case paymentsSection(StateType<Payments>)
-		case bannersSection(StateType<[String]>)
-		case defaultMenuSection(title: String, items: [MenuDataSourceType])
-	}
-	
-	enum MenuDataSourceType: Hashable {
-		case referral
-		case invitation
-		case notification
-		case darkMode(Bool)
-		case version(String)
-		case legal
-		case logout
-		
-		var title: String {
-			switch self {
-			case .referral: return "Reverral"
-			case .invitation: return"Invitation"
-			case .notification: return "Notification"
-			case .darkMode: return "Dark Mode"
-			case .version: return "Version"
-			case .legal: return "Legal"
-			case .logout: return "Logout"
-			}
-		}
-		
-		var valueType: MenuValueType {
-			switch self {
-			case .referral: return .chevronButton
-			case .invitation: return .chevronButton
-			case .notification: return .chevronButton
-			case .darkMode: return .switchButton
-			case .version: return .text
-			case .legal: return .chevronButton
-			case .logout: return .none
-			}
-		}
-		
-		enum MenuValueType {
-			case chevronButton
-			case switchButton
-			case text
-			case none
-		}
-	}
-	
-	enum ActionType {
-		case `default`(ProfileVM.MenuDataSourceType)
-		case `switch`(ProfileVM.MenuDataSourceType, Bool)
-	}
-	
-	enum StateType<T: Hashable>: Hashable {
-		case loading
-		case content(T)
-	}
 }
 
 extension ProfileVM {
 	struct Action {
-		let didLoad: AnyPublisher<Void, Never>
-		let menuDidTap: AnyPublisher<ActionType, Never>
-		let getUser = PassthroughSubject<Void, Never>()
-		let getPayments = PassthroughSubject<Void, Never>()
-		let getBanners = PassthroughSubject<Void, Never>()
+		let didLoad: PassthroughSubject<Void, Never>
+		let menuDidTap: PassthroughSubject<MenuActionType, Never>
+		let getUser: PassthroughSubject<Void, Never>
+		let getPayments: PassthroughSubject<Void, Never>
+		let getBanners: PassthroughSubject<Void, Never>
 	}
 	
 	class State {
-		@Published var dataSources: [SectionDataSourceType] = [
+		@Published var dataSources: [ProfileSectionDataSourceType] = [
 			.userSection(.loading),
-			.paymentsSection(.loading),
-			.bannersSection(.loading)
+			.paymentsSection(.loading)
 		]
 	}
 	
@@ -99,8 +36,9 @@ extension ProfileVM {
 		let state = State()
 		let isDarkMode = self.useCase.isDarkModeOn()
 		self.useCase.switchAppearence(to: isDarkMode ? .dark : .light)
+		let version = self.useCase.getVersion()
 		
-		let menus: [SectionDataSourceType] = [
+		let menus: [ProfileSectionDataSourceType] = [
 			.defaultMenuSection(title: "Promotions" , items: [
 				.referral,
 				.invitation,
@@ -110,7 +48,7 @@ extension ProfileVM {
 				.darkMode(isDarkMode),
 			]),
 			.defaultMenuSection(title: "System" , items: [
-				.version("1.0.0"),
+				.version(version),
 				.legal,
 			]),
 			.defaultMenuSection(title: "Logout" , items: [
@@ -124,11 +62,11 @@ extension ProfileVM {
 			.sink { _ in
 				action.getUser.send(())
 				action.getPayments.send(())
-				action.getBanners.send(())
 			}
 			.store(in: cancellables)
 		
 		action.getUser
+			.receive(on: DispatchQueue.global())
 			.flatMap {
 				self.useCase.getUser()
 					.map { Result.success($0) }
@@ -141,11 +79,14 @@ extension ProfileVM {
 				}
 				
 				if case let .success(user) = result {
+					if user.isVerified {
+						action.getBanners.send(())
+					}
+					
 					guard let userIndex = state.dataSources.firstIndex(where: {
 						if case .userSection = $0 { return true }
 						return false
 					}) else { return }
-					let section = state.dataSources[userIndex]
 					DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
 						state.dataSources[userIndex] = .userSection (.content(user))
 					}
@@ -154,6 +95,7 @@ extension ProfileVM {
 			.store(in: cancellables)
 		
 		action.getPayments
+			.receive(on: DispatchQueue.global())
 			.flatMap {
 				self.useCase.getPayments()
 					.map { Result.success($0) }
@@ -169,7 +111,6 @@ extension ProfileVM {
 						if case .paymentsSection  = $0 { return true }
 						return false
 					}) else { return }
-					let section = state.dataSources[paymentIndex]
 					DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
 						state.dataSources[paymentIndex] = .paymentsSection (.content(payment))
 					}
@@ -178,6 +119,7 @@ extension ProfileVM {
 			.store(in: cancellables)
 		
 		action.getBanners
+			.receive(on: DispatchQueue.global())
 			.flatMap {
 				self.useCase.getBanners()
 					.map { Result.success($0) }
@@ -189,13 +131,12 @@ extension ProfileVM {
 					print(error)
 				}
 				if case let .success(banners) = result {
-					guard let bannerIndex = state.dataSources.firstIndex(where: {
-						if case .bannersSection  = $0 { return true }
+					guard !banners.isEmpty, let paymentIndex = state.dataSources.firstIndex(where: {
+						if case .paymentsSection  = $0 { return true }
 						return false
 					}) else { return }
-					let section = state.dataSources[bannerIndex]
 					DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-						state.dataSources[bannerIndex] = .bannersSection (.content(banners))
+						state.dataSources[paymentIndex+1] = .bannersSection (.content(banners))
 					}
 				}
 			}
@@ -203,11 +144,19 @@ extension ProfileVM {
 		
 		action.menuDidTap
 			.sink { [weak self] actionType in
-				if case let .default(menu) = actionType {
-					Routing.push(.simulation)
+				if case let .default(menu) = actionType, case .logout = menu {
+					self?.useCase.showAlert(firstCompletion: { [weak self] in
+						self?.useCase.doLogout()
+					}, secondCompletion: {
+						print("alert cancelled")
+					})
 				}
 				
-				if case let .switch(menu, isOn) = actionType {
+				else if case let .default(menu) = actionType {
+					self?.useCase.goToSimulation()
+				}
+				
+				if case let .switch(_, isOn) = actionType {
 					self?.useCase.switchAppearence(to: isOn ? .dark : .light)
 				}
 			}

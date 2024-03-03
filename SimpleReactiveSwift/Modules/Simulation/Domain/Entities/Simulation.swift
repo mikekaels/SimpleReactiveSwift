@@ -5,7 +5,7 @@
 //  Created by Santo Michael on 03/03/24.
 //
 
-internal struct Simulation {
+internal struct Simulation: Hashable {
 	let yearlyProjection: Double
 	let investmentDate: String
 	let qtyOwned: Double

@@ -45,7 +45,7 @@ internal final class UIMultipleSelectButton<T: HasTitle>: UIStackView {
 			button.setTitle(type.title, for: .normal)
 			button.setTitleColor(.dynamicColor, for: .normal)
 			button.layer.cornerRadius = Constants.cornerRadius
-			button.layer.borderWidth = 1
+			button.layer.borderWidth = type.initialSelectedState ? 1.5 : 1
 			button.layer.borderColor = type.initialSelectedState ? UIColor.systemRed.cgColor : UIColor.dynamicColor.cgColor
 			button.tintColor = .dynamicColor
 			addArrangedSubview(button)
@@ -55,8 +55,12 @@ internal final class UIMultipleSelectButton<T: HasTitle>: UIStackView {
 			button.tapPublisher
 				.sink { [weak self] _ in
 					self?.didTapPublisher.send(type)
-					self?.buttons.forEach { $0.layer.borderColor = UIColor.dynamicColor.cgColor }
+					self?.buttons.forEach {
+						$0.layer.borderColor = UIColor.dynamicColor.cgColor
+						$0.layer.borderWidth = 1
+					}
 					button.layer.borderColor = UIColor.systemRed.cgColor
+					button.layer.borderWidth = 1.5
 				}
 				.store(in: cancellables)
 		}

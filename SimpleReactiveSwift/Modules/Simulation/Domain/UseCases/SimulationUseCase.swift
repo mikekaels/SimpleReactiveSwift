@@ -9,6 +9,7 @@ import Combine
 
 internal protocol SimulationUseCaseProtocol {
 	func getSimulation() -> AnyPublisher<Simulation, PersistenceError>
+	func getTotalInvestment(marketPrice: Double, yearlyProjection: Double, qtyOwned: Double, estReturn: Double) -> Double
 }
 
 internal final class SimulationUseCase {
@@ -20,6 +21,10 @@ internal final class SimulationUseCase {
 }
 
 extension SimulationUseCase: SimulationUseCaseProtocol {
+	func getTotalInvestment(marketPrice: Double, yearlyProjection: Double, qtyOwned: Double, estReturn: Double) -> Double {
+		return marketPrice * yearlyProjection * qtyOwned * estReturn
+	}
+	
 	func getSimulation() -> AnyPublisher<Simulation, PersistenceError> {
 		repository.getSimulation()
 	}

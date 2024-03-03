@@ -12,7 +12,7 @@ import CombineCocoa
 
 internal final class ProfileMenuCell: UITableViewCell {
 	internal let cancellables = CancelBag()
-	internal var menuDidTapPublisher = PassthroughSubject<ProfileVM.ActionType, Never>()
+	internal var menuDidTapPublisher = PassthroughSubject<MenuActionType, Never>()
 	
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -22,7 +22,7 @@ internal final class ProfileMenuCell: UITableViewCell {
 	
 	override func prepareForReuse() {
 		super.prepareForReuse()
-		menuDidTapPublisher = PassthroughSubject<ProfileVM.ActionType, Never>()
+		menuDidTapPublisher = PassthroughSubject<MenuActionType, Never>()
 		contentStacView.arrangedSubviews.forEach { $0.removeFromSuperview() }
 	}
 	
@@ -76,7 +76,7 @@ internal final class ProfileMenuCell: UITableViewCell {
 		}
 	}
 	
-	private func setupMenu(index: Int, menu: ProfileVM.MenuDataSourceType) {
+	private func setupMenu(index: Int, menu: ProfileMenuDataSourceType) {
 		let menuWrapperView = UIView()
 		
 		let imageView = UIImageView()
@@ -186,7 +186,7 @@ extension ProfileMenuCell {
 		contentSectionLabel.text = title
 	}
 	
-	internal func set(items: [ProfileVM.MenuDataSourceType]) {
+	internal func set(items: [ProfileMenuDataSourceType]) {
 		items.enumerated().forEach { (index, menu) in
 			setupMenu(index: index, menu: menu)
 		}
