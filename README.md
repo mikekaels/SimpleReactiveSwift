@@ -35,15 +35,15 @@ I've implemented a clean architecture, which is great for building highly testab
 ```
 internal final class ProfileVM {
   struct Action {
-  ... all the actions from the view
+  ... // All actions
   }
 
   class State {
-  ... all the state/datasources
+  ... // All state/datasources
   }
 
   func transform(_ input: Input, cancellables: inout Set<AnyCancellable>) -> Output {
-  ... where all the actions observed and giving the side effect to the state
+  ... // Observes actions and applies side effects to the state
   }
 }
 ```
@@ -57,7 +57,7 @@ private func bindViewModel() {
 
   output.$...
   .sink { [weak self] _ in
-  .... // do something to the view when there is changes on the state
+  .... // Perform view updates when the state changes
   }
   .store(in: &cancellables)
 
@@ -105,7 +105,7 @@ Unit testing is implemented for View Models, Use Cases, and Repositories.
 
 ## Getting Started
 ### 1. Clone this project
-You can clone this project by HTTP or SSH on your terminal
+Clone this project via HTTP or SSH in your terminal:
 - HTTPS ``` git clone https://github.com/mikekaels/SimpleReactiveSwift.git ```
 - SSH ``` git clone git@github.com:mikekaels/SimpleReactiveSwift.git ```
 - Or [Download](https://github.com/mikekaels/SimpleReactiveSwift/archive/refs/heads/main.zip) this project
@@ -113,7 +113,7 @@ You can clone this project by HTTP or SSH on your terminal
 
 ### 2. Instalation
 
-Eure you have installed [cocoapods](https://cocoapods.org/) on your machine, If not, run this command in your terminal: 
+Ensure you have installed [cocoapods](https://cocoapods.org/) on your machine, If not, run this command in your terminal: 
 ```bash
 $ sudo gem install cocoapods
 ```
