@@ -2,7 +2,7 @@
 
 ![This is an image](https://ik.imagekit.io/m1ke1magek1t/Group%202_uWzon_8q4.png?updatedAt=1709488218399)
 
-## Features
+### Features
 - Profile
 - Simulation
 - Dark Mode
@@ -15,14 +15,14 @@ I've implemented a clean architecture, which is great for building highly testab
 ├─ ...
 ├─ Modules
     ├─ Profile
-        ├─ Data (Concerned with data-related operations, including repositories, requests, and responses)
+        ├─ Data (Handles data-related operations, including repositories, requests, and responses)
             ├─ Repositories
             ├─ Requests
             ├─ Responses
-        ├─ Domain (Contains business logic and entities that represent the core functionality of the module)
+        ├─ Domain (Contains business logic and entities representing the core functionality)
             ├─ UseCases
             ├─ Entities
-        ├─ Presentation (Handles the UI and the logic of the view)
+        ├─ Presentation (Manages the UI and logic of the view)
             ├─ ProfileVC
             ├─ ProfileVM
             ├─ Views
@@ -99,16 +99,16 @@ imageView.snp.makeConstraints { make in
 ```
 
 ### XCTest
-Unit testing is implemented for view models, use cases, and repositories.
+Unit testing is implemented for View Models, Use Cases, and Repositories.
 ![Unit testing](https://ik.imagekit.io/m1ke1magek1t/Group%203_aCrbsvoOd.png?updatedAt=1709488218128)
 
 
 ## Getting Started
 ### 1. Clone this project
-You can clone the project by Http or Ssh on your terminal
+You can clone this project by HTTP or SSH on your terminal
 - HTTPS ``` git clone https://github.com/mikekaels/SimpleReactiveSwift.git ```
 - SSH ``` git clone git@github.com:mikekaels/SimpleReactiveSwift.git ```
-- Or [Download](https://github.com/mikekaels/SimpleReactiveSwift/archive/refs/heads/main.zip) the project
+- Or [Download](https://github.com/mikekaels/SimpleReactiveSwift/archive/refs/heads/main.zip) this project
 
 
 ### 2. Instalation
@@ -127,12 +127,11 @@ open SimpleReactiveSwift.xcworkspace
 ```
 
 ### 4. Run
-Select the simulator or device
-and Run the project!
+Select the simulator or device, and run the project!
 
 ### 5. Done
 
 ## Dependency
-- **Snapkit** to handle auto layout
-- **CombineCocoa** extensions UIKit publisher (used for textfield's text value change)
-- **IQKeyboardManagerSwift** to handle keyboard (used for handle tap outside)
+- **Snapkit**: For handling auto layout
+- **CombineCocoa**: Extensions for UIKit publisher (used for textfield's text value change)
+- **IQKeyboardManagerSwift**: For handling keyboard (used for tapping outside)
