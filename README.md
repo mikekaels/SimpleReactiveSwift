@@ -123,7 +123,7 @@ pod install
 ```
 ### 3. Open the .xcworkspace file
 ```bash
-open open SimpleReactiveSwift.xcworkspace
+open SimpleReactiveSwift.xcworkspace
 ```
 
 ### 4. Run
