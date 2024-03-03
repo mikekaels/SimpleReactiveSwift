@@ -1,6 +1,6 @@
 # Simple Reactive Swift
 
-![This is an image](https://ik.imagekit.io/m1ke1magek1t/Group%202_uWzon_8q4.png?updatedAt=1709488218399)
+![This is an image](https://ik.imagekit.io/m1ke1magek1t/Group%204_j3-9dua90.png?updatedAt=1709491184286)
 
 ### Features
 - Profile
