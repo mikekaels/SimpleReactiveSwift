@@ -1,4 +1,4 @@
-# SimpleReactiveSwift
+# Simple Reactive Swift
 
 ![This is an image](https://ik.imagekit.io/m1ke1magek1t/Group%202_uWzon_8q4.png?updatedAt=1709488218399)
 
