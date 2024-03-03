@@ -10,7 +10,7 @@
 ### Clean Architecture
 ![Clean Architechture](https://ik.imagekit.io/m1ke1magek1t/CleanArch.png?updatedAt=1705685276939)
 
-I use the clean architecture that might be worth looking to build highly testable projects and decoupling the modules so it can minimize the complexity.
+I've implemented a clean architecture, which is great for building highly testable projects and decoupling modules to minimize complexity.
 ```
 ├─ ...
 ├─ Modules
@@ -64,8 +64,8 @@ private func bindViewModel() {
 }
 ```
 
-### Programatically UI
-I'm more confident to use programatically to avoid error or conflict on the XIB or Storyboard
+### Programmatically Built UI
+I prefer programmatic UI to avoid errors or conflicts with XIB or Storyboard files.
 ```
 private let imageView: UIImageView = {
   let image = UIImageView()
@@ -78,9 +78,9 @@ view.addSubview(imageView)
 ```
 
 ### Auto Layout
-To configure auto layout I use [SnapKit](https://github.com/SnapKit/SnapKit) for faster development .
+For configuring auto layout I use [SnapKit](https://github.com/SnapKit/SnapKit) for faster development .
 
-without SnapKit
+Without SnapKit
 ```
   imageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
   imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
@@ -88,7 +88,7 @@ without SnapKit
   imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
 ```
 
-with Snapkit
+With Snapkit
 ```
 imageView.snp.makeConstraints { make in
     make.width.equalTo(200)
@@ -99,7 +99,7 @@ imageView.snp.makeConstraints { make in
 ```
 
 ### XCTest
-Make unit testing for view models, use cases, and repositories
+Unit testing is implemented for view models, use cases, and repositories.
 ![Unit testing](https://ik.imagekit.io/m1ke1magek1t/Group%203_aCrbsvoOd.png?updatedAt=1709488218128)
 
 
@@ -113,15 +113,18 @@ You can clone the project by Http or Ssh on your terminal
 
 ### 2. Instalation
 
-Make sure you have installed [cocoapods](https://cocoapods.org/) on your machine, if not please do this command in your Terminal: 
+Eure you have installed [cocoapods](https://cocoapods.org/) on your machine, If not, run this command in your terminal: 
 ```bash
 $ sudo gem install cocoapods
 ```
-If you already install cocoapods, in your terminal go to inside the project directory and do this command: 
+If you already have CocoaPods installed, navigate to the root directory of this project in your terminal and run this command:
 ```bash
 pod install
 ```
 ### 3. Open the .xcworkspace file
+```bash
+open open SimpleReactiveSwift.xcworkspace
+```
 
 ### 4. Run
 Select the simulator or device
