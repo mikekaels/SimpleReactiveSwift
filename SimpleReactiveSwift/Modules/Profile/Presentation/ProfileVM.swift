@@ -136,7 +136,7 @@ extension ProfileVM {
 						return false
 					}) else { return }
 					DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-						state.dataSources[paymentIndex+1] = .bannersSection (.content(banners))
+						state.dataSources.insert(.bannersSection (.content(banners)), at: paymentIndex + 1)
 					}
 				}
 			}
